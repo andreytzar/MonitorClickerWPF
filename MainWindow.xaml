@@ -1,0 +1,30 @@
+﻿<Window x:Class="MonitorClickerWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MonitorClickerWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="194" Width="400" Closing="Window_Closing">
+    <Grid>
+        <DockPanel>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <Button x:Name="StartStopTask" Content="STOP Task" VerticalAlignment="Center" Click="StartStopTask_Click"/>
+                <Label Content="ClickDelay" VerticalAlignment="Center"/>
+                <TextBox x:Name="TXTClickDelay" MinWidth="30" VerticalAlignment="Center" Text="{Binding ClickDelay}"/>
+                <Label Content="Clicking avery, min" VerticalAlignment="Center"/>
+                <TextBox x:Name="TXTTaskDelay" MinWidth="30" VerticalAlignment="Center" Text="{Binding ClickAveryMin}"/>
+            </StackPanel>
+            <Label x:Name="LBLTimeLeft" Content="Time left for Next Clicking:" DockPanel.Dock="Top"/>
+            <Label Content="Click Tasks:" DockPanel.Dock="Top"/>
+            <StackPanel Orientation="Horizontal" DockPanel.Dock="Top">
+                <Button x:Name="StartRecMouse" Content="Start Rec Mouse" Click="StartRecMouse_Click"/>
+                <Button x:Name="StopRecMouse" Content="Stop Rec" Click="StopRecMouse_Click"/>
+                <Button x:Name="ClearRecMouse" Content="Clear Rec" Click="ClearRecMouse_Click"/>
+                <Button x:Name="SaverRecMouse" Content="Save" Click="SaverRecMouse_Click"/>
+            </StackPanel>
+            <ListBox x:Name="RecsList" DockPanel.Dock="Top" ItemsSource="{Binding Points}"/>
+
+        </DockPanel>
+    </Grid>
+</Window>
